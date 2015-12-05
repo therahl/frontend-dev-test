@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="brand">
+          <img src="images/logo.png" alt="">
+        </div>
+        <ul class="pull-right">
+          <a href=""><li>Home</li></a>
+          <a href=""><li>Uno</li></a>
+          <a href=""><li>Dos</li></a>
+          <a href=""><li>Tres</li></a>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    </nav>
+    <main>
+      <div class="container page-content">
+        <div class="row">
+          <div class="col-12" id="slide-show">
+            <img src="images/slideshow/1.jpg" alt="alt text">
+          </div>
+          <section>
+            <div class="col-lg-4 col-md-6">
+              <h2>This is Some Content</h2>
+              <img src="images/column-left.jpg" alt="alt text">
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+              there live the blind texts. Separated they live in Bookmarksgrove right at the coast
+              of the Semantics, a large language ocean.</p>
+            </div>
+          </section>
+          <section>
+            <div class="col-lg-4 col-md-6">
+              <h2>This is Some Content</h2>
+              <img src="images/column-center.jpg" alt="alt text">
+              <ul class="content-list">
+                <li>Sed lacinia enim et nisl viverra.</li>
+                <li>Nulam elementum quam in luctus.</li>
+                <li>Integer ac et lacus hendrerit pretium.</li>
+                <li>Donec placerat dui et blandit.</li>
+                <li>Nulam elementum quam in luctus.</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <div class="col-lg-4 hidden-tablet">
+              <h2>What Others are Saying</h2>
+              <div id="example"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container clearfix">
+        <ul class="pull-right">
+          <a href=""><li>Home</li></a>
+          <a href=""><li>Uno</li></a>
+          <a href=""><li>Dos</li></a>
+          <a href=""><li>Tres</li></a>
+        </ul>
+        <p>&copy; Copyright, All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="https://fb.me/react-0.14.3.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/babel">
+      // I would not normally put this here, but Chrome will only load it from
+      // http so I moved it here to keep things simple.
+      class CommentSection extends React.Component{
+        constructor(props){
+          super(props);
+        }
+        render(){
+          let commentList = this.props.comments.sort((a, b) => {
+            return a.timestamp - b.timestamp;
+          })
+          .slice(0, 5)
+          .map(comment => {
+            let date = new Date(comment.timestamp);
+            date = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+
+            return(
+              <li key={comment.author} className="comment-item italics">
+                <span className="comment-quote">"{comment.comment}"</span>
+                <br /><span className="bold-only">&nbsp;- {comment.name}, </span>
+                 {date}
+              </li>
+            );
+          });
+
+          return(
+            <div className="comments-section">
+              <ul>{commentList}</ul>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<CommentSection comments={comments} />, document.getElementById('example'));
+    </script>
+  </body>
+</html>

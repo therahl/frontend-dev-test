@@ -1,0 +1,219 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+[class*="col-"] {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+  margin-bottom: 15px;
+}
+body {
+  background-color: #E2E2E2;
+  color: #4f4f4f;
+  line-height: 30px;
+  font-family: serif;
+}
+p {
+  font-size: 1.1em;
+}
+h2 {
+  font-weight: 400;
+  font-family: sans-serif;
+  margin-bottom: 7px;
+}
+a {
+  text-decoration: none;
+  color:inherit;
+}
+a li:hover {
+  opacity: 0.4;
+}
+img {
+  width: 95%;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 5px;
+  box-shadow: 6px 6px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+nav {
+  height: 160px;
+  background-color: #CCC;
+  border-top: 7px solid #7f7f7f;
+  font-family: sans-serif;
+}
+
+footer {
+  height: 145px;
+  background-color: #CCC;
+  padding: 15px;
+  color: #646464;
+  display: block;
+  clear: both;
+}
+footer p {
+  float: left;
+}
+nav ul,
+footer ul {
+  list-style: none;
+  padding-left: 0px;
+  display: inline-block;
+}
+
+nav ul {
+  width: 100%;
+  background-color: #7f7f7f;
+  color: white;
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+nav ul li,
+footer ul li {
+  display: block;
+  float: left;
+}
+footer ul li {
+  padding: 0px 10px 0px 10px;
+}
+nav ul li {
+  padding: 8px 25px;
+  text-transform: uppercase;
+}
+
+nav a~a li,
+footer a~a li{
+  border-left: 1px solid #7F7F7F
+}
+
+.row {
+  margin: 0 -10px;
+  margin-bottom: 20px;
+}
+.row:last-child {
+  margin-bottom: 0;
+}
+.container {
+  width: 100%;
+  margin: auto;
+}
+.pull-right {
+  float: right;
+}
+.clearfix {
+  overflow: auto;
+}
+.brand img {
+  border: none;
+  background-color: transparent;
+  width: initial;
+  box-shadow: none;
+  float: left;
+}
+.content-list {
+  list-style-image: url('../images/list.png');
+  list-style-type: inherit;
+}
+.page-content {
+  padding-top: 50px;
+}
+.bold-only {
+  font-weight: bold;
+  font-style: normal;
+}
+.italics {
+  font-style: italic;
+}
+.hidden-tablet {
+  display: inherit;
+}
+.comment-quote {
+  font-size: 1.25em;
+}
+.comments-section ul {
+  list-style-type: none;
+  box-shadow: inset 0 0 100px #000000;
+  padding-left: 0px;
+  margin-top: 0;
+}
+.comments-section ul li {
+  padding: 15px;
+  background-color: rgba(194, 210, 223, 0.8);
+}
+.comments-section ul li:nth-child(odd) {
+  background: rgba(216,216,216,0.8);
+}
+/* Mobile */
+@media only screen and (min-width: 460px){
+  nav {
+    height: 113px;
+    background-color: #CCC;
+    padding-top: 8px;
+    border-top: 7px solid #7f7f7f;
+    font-family: sans-serif;
+  }
+  nav ul {
+    background-color: #2BB7F2;
+    width: initial;
+    border: 1px solid #7F7F7F;
+    border-radius: 7px;
+    color: white;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#99d6f6+0,74b5f7+72,2bb7f2+100 */
+    background: #99d6f6; /* Old browsers */
+    background: -moz-linear-gradient(top,  #99d6f6 0%, #74b5f7 72%, #2bb7f2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #99d6f6 0%,#74b5f7 72%,#2bb7f2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #99d6f6 0%,#74b5f7 72%,#2bb7f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99d6f6', endColorstr='#2bb7f2',GradientType=0 ); /* IE6-9 */
+    font-size: 1.2em;
+    font-weight: lighter;
+  }
+  footer {
+    height: 110px;
+
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .col-md-1 {width: 8.33%;}
+  .col-md-2 {width: 16.66%;}
+  .col-md-3 {width: 25%;}
+  .col-md-4 {width: 33.33%;}
+  .col-md-5 {width: 41.66%;}
+  .col-md-6 {width: 50%;}
+  .col-md-7 {width: 58.33%;}
+  .col-md-8 {width: 66.66%;}
+  .col-md-9 {width: 75%;}
+  .col-md-10 {width: 83.33%;}
+  .col-md-11 {width: 91.66%;}
+  .col-md-12 {width: 100%;}
+  .container {
+    width: 85%;
+  }
+  img {
+    width: 100%;
+  }
+  .hidden-tablet { display: none; }
+}
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+  .col-lg-1 {width: 8.33%;}
+  .col-lg-2 {width: 16.66%;}
+  .col-lg-3 {width: 25%;}
+  .col-lg-4 {width: 33.33%;}
+  .col-lg-5 {width: 41.66%;}
+  .col-lg-6 {width: 50%;}
+  .col-lg-7 {width: 58.33%;}
+  .col-lg-8 {width: 66.66%;}
+  .col-lg-9 {width: 75%;}
+  .col-lg-10 {width: 83.33%;}
+  .col-lg-11 {width: 91.66%;}
+  .col-lg-12 {width: 100%;}
+  .hidden-tablet {
+    display: inherit;
+  }
+}
